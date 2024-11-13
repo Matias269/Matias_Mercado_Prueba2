@@ -1,6 +1,7 @@
 package view;
 
 import controllers.Controller;
+import models.Carpa;
 import models.DatosClientes;
 import models.Hotel;
 import models.Cabagna;
@@ -41,7 +42,7 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Ingrese el tipo de alojamiento (Hotel o Cabaña): ");
+                    System.out.print("Ingrese el tipo de alojamiento (Hotel, Cabaña o Carpa): ");
                     String tipoAlojamiento = scanner.nextLine();
 
                     System.out.print("Ingrese el nombre del cliente: ");
@@ -107,13 +108,35 @@ public class App {
                         System.out.print("Ingrese el valor base por noche: ");
                         int valorBaseNoche = scanner.nextInt();
 
-                        Cabagna cabagna = new Cabagna(valorBaseNoche, datosCliente,tipoDeTemporada,cantidadNoches, esFumador,cantPersonas, chimenea);
+                        Cabagna cabagna = new Cabagna(valorBaseNoche, datosCliente, tipoDeTemporada, cantidadNoches, esFumador, cantPersonas, chimenea);
                         controlador.agregarAlojamiento(cabagna);
+
+                    } else if(tipoAlojamiento.equalsIgnoreCase("Carpa")){
+                            System.out.print("Ingrese la capacidad de la carpa: ");
+                            int capacidad = scanner.nextInt();
+
+                            System.out.print("Ingrese el tipo de temporada (alta, media, baja): ");
+                            String tipoDeTemporada = scanner.nextLine();
+                            scanner.nextLine();
+
+                            System.out.print("Ingrese la cantidad de noches: ");
+                            int cantidadNoches = scanner.nextInt();
+                            scanner.nextLine();
+
+                            System.out.print("Ingrese la cantidad de Personas: ");
+                            int cantPersonas = scanner.nextInt();
+                            scanner.nextLine();
+
+                            System.out.print("Ingrese el valor base por noche: ");
+                            int valorBaseNoche = scanner.nextInt();
+
+                        Carpa carpa = new Carpa(valorBaseNoche, datosCliente, tipoDeTemporada, cantidadNoches, cantPersonas);
+                        controlador.agregarAlojamiento(carpa);
                     } else {
                         System.out.println("Tipo de alojamiento no válido.");
                     }
                     break;
-                case 2: controlador.mostrarAlojamientos(); break;
+                case 2: controlador.mostrarAlojamientos();break;
                 case 3: System.out.print("Ingrese el RUT del cliente: ");
                     String rutCliente = scanner.nextLine();
                     controlador.mostrarAlojamientoCliente(rutCliente);

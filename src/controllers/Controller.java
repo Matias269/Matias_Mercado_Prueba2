@@ -2,9 +2,9 @@ package controllers;
 
 import models.Cabagna;
 import models.MedioDeAlojamiento;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Controller {
     private List<MedioDeAlojamiento> alojamientos;
