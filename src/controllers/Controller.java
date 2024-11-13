@@ -2,9 +2,9 @@ package controllers;
 
 import models.Cabagna;
 import models.MedioDeAlojamiento;
+
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class Controller {
     private List<MedioDeAlojamiento> alojamientos;
@@ -51,6 +51,7 @@ public class Controller {
         double total = 0;
         for (MedioDeAlojamiento alojamiento : alojamientos) {
             total += alojamiento.adicional();
+            System.out.println(total);
         }
         return total;
     }
@@ -59,6 +60,7 @@ public class Controller {
         double total = 0;
         for (MedioDeAlojamiento alojamiento : alojamientos) {
             total += alojamiento.bonoDescuento();
+            System.out.println(total);
         }
         return total;
     }
@@ -82,8 +84,15 @@ public class Controller {
                     double nuevoValorBase = cabagna.getValorBaseNoche() * 1.18;
                     cabagna.setValorBaseNoche(nuevoValorBase);
                     System.out.println("Incremento aplicado a la cabaña del cliente " + cabagna.getDatosClientes().getName());
+                    System.out.println("El nuevo valor es: " + nuevoValorBase);
                 }
             }
         }
     }
+
+    public int obtenerCantidadAlojamientos() {
+        return alojamientos.size();
+    }
+
+
 }
