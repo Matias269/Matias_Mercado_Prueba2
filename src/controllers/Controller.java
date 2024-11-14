@@ -69,7 +69,7 @@ public class Controller {
         int rutInt = Integer.parseInt(rut);
         for (MedioDeAlojamiento alojamiento : alojamientos) {
             if (alojamiento.getDatosClientes().getRut() == rutInt) {
-                return alojamiento.valorACancelar();
+                System.out.println("El valor es: "+ alojamiento.valorACancelar());
             }
         }
         System.out.println("Cliente no encontrado.");

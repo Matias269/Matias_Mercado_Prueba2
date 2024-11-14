@@ -34,7 +34,8 @@ public class App {
             System.out.println("5. Calcular Total Bono Descuento");
             System.out.println("6. Cantidad medios de alojamiento");
             System.out.println("7. Aplicar Incremento en Valor Base");
-            System.out.println("8. Salir");
+            System.out.println("8. Calcular Valor A Cancelar Cliente");
+            System.out.println("9. Salir");
             System.out.print("Elige una opción: ");
 
             int opcion = scanner.nextInt();
@@ -173,6 +174,12 @@ public class App {
                     scanner.nextLine();
                     break;
                 case 8:
+                    System.out.println("Ingrese el RUT del cliente para calcular el valor a cancelar.");
+                  String rutValor = scanner.nextLine();
+                    controlador.calcularValorACancelarCliente(rutValor);
+                    scanner.nextLine();
+                    break;
+                case 9:
                     salir = true;
                     System.out.println("Saliendo...");
                     break;
