@@ -2,11 +2,11 @@ package models;
 
 public abstract class MedioDeAlojamiento {
     protected double valorBaseNoche;
-    protected models.DatosClientes datosClientes;
+    protected DatosClientes datosClientes;
     protected String tipoDeTemporada;
     protected int cantidadNoches;
 
-    public MedioDeAlojamiento(double valorBaseNoche, models.DatosClientes datosClientes, String tipoDeTemporada, int cantidadNoches) {
+    public MedioDeAlojamiento(double valorBaseNoche, DatosClientes datosClientes, String tipoDeTemporada, int cantidadNoches) {
         this.valorBaseNoche = valorBaseNoche;
         this.datosClientes = datosClientes;
         this.tipoDeTemporada = tipoDeTemporada;
@@ -21,11 +21,11 @@ public abstract class MedioDeAlojamiento {
         this.valorBaseNoche = valorBaseNoche;
     }
 
-    public models.DatosClientes getDatosClientes() {
+    public DatosClientes getDatosClientes() {
         return datosClientes;
     }
 
-    public void setDatosClientes(models.DatosClientes datosClientes) {
+    public void setDatosClientes(DatosClientes datosClientes) {
         this.datosClientes = datosClientes;
     }
 
@@ -65,13 +65,14 @@ public abstract class MedioDeAlojamiento {
             return 0;
         }
     }
+
     @Override
     public String toString() {
-        return "MedioDeAlojamiento" + "\n"+
+        return "MedioDeAlojamiento" +
                 "Valor Base por Noche= " + valorBaseNoche + "\n"+
-                ", Datos del Cliente=" + datosClientes.getName() +" "+ datosClientes.getRut()+ "\n"+
-                ", Temporada = " + tipoDeTemporada + '\'' + "\n"+
-                ", Cantidad de Noches=" + cantidadNoches + "\n"+
+                "Datos del Cliente=" + datosClientes.getName() + " " +datosClientes.getRut()+ "\n"+
+                "Temporada='" + getTipoDeTemporada() + '\'' + "\n"+
+                "Cantidad de Noches=" + cantidadNoches + "\n"+
                 '.';
     }
 

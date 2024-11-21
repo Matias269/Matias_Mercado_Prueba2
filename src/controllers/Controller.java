@@ -69,10 +69,14 @@ public class Controller {
         int rutInt = Integer.parseInt(rut);
         for (MedioDeAlojamiento alojamiento : alojamientos) {
             if (alojamiento.getDatosClientes().getRut() == rutInt) {
-                System.out.println("El valor es: "+ alojamiento.valorACancelar());
+                System.out.println("El subtotal es: $"+alojamiento.subtotal());
+                System.out.println("El adicional es: $"+alojamiento.adicional());
+                System.out.println("El bono de descuento es: $"+alojamiento.bonoDescuento());
+                System.out.println("El total a cancelar es: $"+alojamiento.valorACancelar());
+            }else {
+                System.out.println("Cliente no encontrado.");
             }
         }
-        System.out.println("Cliente no encontrado.");
         return 0;
     }
 

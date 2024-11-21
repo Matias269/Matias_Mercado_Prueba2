@@ -1,11 +1,11 @@
 package models;
 
-public class Hotel extends models.Hospederia {
+public class Hotel extends Hospederia{
     boolean conDesayuno;
     protected int cantPersonas;
 
-    public Hotel(double valorBaseNoche, models.DatosClientes datosClientes, String tipoDeTemporada, int cantidadNoches, int capacidad, boolean esFumador, boolean conDesayuno, int cantPersonas) {
-        super(valorBaseNoche,datosClientes, tipoDeTemporada, cantidadNoches, capacidad, esFumador);
+    public Hotel(double valorBaseNoche, DatosClientes datosClientes, String tipoDeTemporada, int cantidadNoches, int capacidad, boolean esFumador, boolean conDesayuno, int cantPersonas) {
+        super(valorBaseNoche, datosClientes, tipoDeTemporada, cantidadNoches, capacidad, esFumador);
         this.conDesayuno = conDesayuno;
         this.cantPersonas = cantPersonas;
     }

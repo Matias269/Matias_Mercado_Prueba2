@@ -47,11 +47,5 @@ public class Cabagna extends MedioDeAlojamiento {
         return 0;
     }
 
-    // Función para aplicar el incremento del valor base
-    public void incrementaValorBase() {
-        if (cantPersonas > 5) {
-            valorBaseNoche *= 1.18;
-        }
 
-    }
 }
